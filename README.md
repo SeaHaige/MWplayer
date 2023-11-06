@@ -26,37 +26,41 @@ player.checkplugin(function(result){
 });
 ```
 调用方式
-
+```
 var videoObject = {
         container: '.video',//“#”代表容器的ID，“.”或“”代表容器的class
         download:'mwplayer.exe',//插件安装文件下载地址，需要复制安装文件至网页服务器
         title:'video',               //设定播放器标题
         video:'http://***'        //视频地址支持httpFlv,HLS,rtsp等视频传输协议
  };
-
+```
         
 
  定义播放器初始化时的各种设置
-
+```
 new mwplayer(videoObject);
-
+```
 播放器操作
-
+```
 player.hide()                       //隐藏视频播放
-
+```
+```
 player.show()                     //显示视频播放
-
+```
+```
 player.layout()                     //重新定位播放器位置
-
+```
+```
 mwplayer.setHTMLTemplate(id,html) 
 //设置播放模板HTML,id可以为"connect" "end" "retry" "fail" "retrying"
-
+```
+```
 player.destroy()                     //结束视频播放
-
+```
 
 
 视频截图
-
+```
 player.snap(function(blob){
             const url = window.URL.createObjectURL(blob);
             // 创建链接
@@ -70,6 +74,5 @@ player.snap(function(blob){
             // 释放 URL 对象
             window.URL.revokeObjectURL(url);
         })
-
-
+```
 
