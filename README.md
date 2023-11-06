@@ -13,7 +13,7 @@ Mwplayer是一个功能强大且高性能的中间件播放器，适用于构建
 
 Mwplayer使用中间件方式播放视频文件，需要上传js文件和安装包至网站目录里即可使用，js调用时候会自动提示用户下载安装插件。检测播放插件安装代码
 
-
+```
 let player=new mwplayer();
 player.checkplugin(function(result){
         if(result){
@@ -24,7 +24,7 @@ player.checkplugin(function(result){
                 //未检测到插件
         }
 });
-
+```
 调用方式
 
 var videoObject = {
