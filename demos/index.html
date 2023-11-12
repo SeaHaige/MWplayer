@@ -7,10 +7,13 @@
     </style>
     <body style="padding:12px;overflow:hidden;background-color: white;">
         <h3 style="text-align: center;;">MWplayer(MapWe中间件播放器)测试页面</h3>
-        <div><span>地址:&nbsp;</span><input placeholder="支持输入http,rtsp,rtmps视频地址..." style="width:calc(100% - 120px)"/>&nbsp;<button onclick='playvideo()'>播放</button></div>
+        <div>
+            <span>地址:&nbsp;</span>
+            <input id="videourl" placeholder="支持输入http,rtsp,rtmps视频地址..." style="width:calc(100% - 120px)"/>&nbsp;<button onclick='playvideo()'>播放</button>
+        </div>
         <br><br>
         <div style="width:100%;text-align: center;;">
-            <div id="p1" style="width:640px;height:480px;display:inline-block;border:1px solid #888;">
+            <div id="p1" style="width:60vw;height:60vh;display:inline-block;border:1px solid #888;">
             </div> 
         </div>
         <br>
@@ -22,7 +25,7 @@
             <button onclick='snapvideo()'>抓图</button>
         </div>
         <br>
-        <div style="font-size:12px;">提示：请先安装播放插件再进行播放!!!</div>
+        <div style="font-size:14px;">提示：请先安装播放插件再进行播放!!!</div>
 <script src="mwplayer.min.js"></script>
 <script>
 function closevideo(){
@@ -56,7 +59,9 @@ function snapvideo(){
     })
 }
 function playvideo(){
-    player=new mwplayer({video:"c:/h265.mp4",container:"#p1",option:{islive:false,maxretry:3,retryinter:15,title:"是的"}})
+    let v=document.querySelector("#videourl").value; 
+    player=new mwplayer({video:v
+        ,container:"#p1",option:{islive:false,maxretry:3,retryinter:15,title:"my video"}})
 }
 
 </script>
